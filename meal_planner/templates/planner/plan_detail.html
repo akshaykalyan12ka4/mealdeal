@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load static %}
+{% load mathfilters %}
+
+{% block title %} Weeks {% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h2>Plan: {{ object }}</h2>
+    </div>
+  </div>
+  
+  <hr>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header">Monday</h5>
+        <div class="card-body">
+          <form method="post">
+          {% csrf_token %}
+          {{ monday_form.non_field_errors }}
+          {{ monday_form.day.as_hidden }}
+          <p class="card-text">Mains: {{ monday_form.mains }}</p>
+          <p class="card-text"> Vegies: {{ monday_form.veg }}</p>
+          <p class="card-text"> Starch: {{ monday_form.starch }}</p>
+          <p class="card-text"> Salad: {{ monday_form.salad }}</p>
+          <input type="submit" class="form-control btn btn-primary" value="Save Day"> 
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header">Tuesday</h5>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            {{ tuesday_form.non_field_errors }}
+            {{ tuesday_form.day.as_hidden }}
+            <p class="card-text">Mains: {{ tuesday_form.mains }}</p>
+            <p class="card-text"> Vegies: {{ tuesday_form.veg }}</p>
+            <p class="card-text"> Starch: {{ tuesday_form.starch }}</p>
+            <p class="card-text"> Salad: {{ tuesday_form.salad }}</p>
+            <input type="submit" class="form-control btn btn-primary" value="Save Day"> 
+            </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header">Wednesday</h5>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            {{ wednesday_form.non_field_errors }}
+            {{ wednesday_form.day.as_hidden }}
+            <p class="card-text">Mains: {{ wednesday_form.mains }}</p>
+            <p class="card-text"> Vegies: {{ wednesday_form.veg }}</p>
+            <p class="card-text"> Starch: {{ wednesday_form.starch }}</p>
+            <p class="card-text"> Salad: {{ wednesday_form.salad }}</p>
+            <input type="submit" class="form-control btn btn-primary" value="Save Day"> 
+            </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header">Thursday</h5>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            {{ thursday_form.non_field_errors }}
+            {{ thursday_form.day.as_hidden }}
+            <p class="card-text">Mains: {{ thursday_form.mains }}</p>
+            <p class="card-text"> Vegies: {{ thursday_form.veg }}</p>
+            <p class="card-text"> Starch: {{ thursday_form.starch }}</p>
+            <p class="card-text"> Salad: {{ thursday_form.salad }}</p>
+            <input type="submit" class="form-control btn btn-primary" value="Save Day"> 
+            </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header">Friday</h5>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            {{ friday_form.non_field_errors }}
+            {{ friday_form.day.as_hidden }}
+            <p class="card-text">Mains: {{ friday_form.mains }}</p>
+            <p class="card-text"> Vegies: {{ friday_form.veg }}</p>
+            <p class="card-text"> Starch: {{ friday_form.starch }}</p>
+            <p class="card-text"> Salad: {{ friday_form.salad }}</p>
+            <input type="submit" class="form-control btn btn-primary" value="Save Day"> 
+            </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header">Saturday</h5>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            {{ saturday_form.non_field_errors }}
+            {{ saturday_form.day.as_hidden }}
+            <p class="card-text">Mains: {{ saturday_form.mains }}</p>
+            <p class="card-text"> Vegies: {{ saturday_form.veg }}</p>
+            <p class="card-text"> Starch: {{ saturday_form.starch }}</p>
+            <p class="card-text"> Salad: {{ saturday_form.salad }}</p>
+            <input type="submit" class="form-control btn btn-primary" value="Save Day"> 
+            </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header">Sunday</h5>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            {{ sunday_form.non_field_errors }}
+            {{ sunday_form.day.as_hidden }}
+            <p class="card-text">Mains: {{ sunday_form.mains }}</p>
+            <p class="card-text"> Vegies: {{ sunday_form.veg }}</p>
+            <p class="card-text"> Starch: {{ sunday_form.starch }}</p>
+            <p class="card-text"> Salad: {{ sunday_form.salad }}</p>
+            <input type="submit" class="form-control btn btn-primary" value="Save Day"> 
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End Action buttons -->
+</div>
+<style>
+  select {
+    width: 100%
+  }
+</style>
+{% endblock content %}
